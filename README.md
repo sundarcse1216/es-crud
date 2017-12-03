@@ -6,10 +6,10 @@ Install <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsea
 
 # Running
 Import this project as a Maven, and Building this project using maven goals (clean install). It will create target directory on our project Home path. within this target directory jar file will be create. Run that jar with command-line argument(s). The command line argument should be atleast one argument atmost nine argument The argument minimum value is 1 maximum value is 9. 
-* 1 for Create,
-* 2 for Read,
-* 3 for Update, 
-* 4 for Delete,
+* 1 - Create,
+* 2 - Read,
+* 3 - Update, 
+* 4 - Delete,
 * 5 - Read Multiple,
 * 6 - Insert Multiple,
 * 7 - Search,
