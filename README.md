@@ -19,4 +19,4 @@ Import this project as a Maven, and Building this project using maven goals (cle
 For Example: java -jar ESCrud-1.0.0.jar 1 3 (or) java -Xms250m -Xmx250m -jar ESCrud-1.0.0.jar 1 3
 
 # Author
-* Sundararajan ( <a href="https://twitter.com/sundar815">@sundar815</a> )
+* Sundararajan ( <a href="https://twitter.com/sundar815" target="_blank">@sundar815</a> )
