@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- This configuration append the log in console only -->
+	<appender name="CA" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] [%p] [%c:%L] %m%n"/>
+		</layout>
+	</appender>
+
+	<!-- This configuration append the log in same file as every day -->
+	<appender name="FA" class="org.apache.log4j.FileAppender">
+		<param name="File" value="log/elasticsearch.log"/>
+		<param name="Threshold" value="INFO"/>
+		<param name="Append" value="true" /> <!-- By default true -->
+		<param name="ImmediateFlush" value="true" /> <!-- By default true -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}] [%p] [%c:%L] %m%n" />
+		</layout>
+	</appender>
+
+	<!-- This configuration append the log in separat file by date -->
+	<appender name="DRFA" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/elasticsearch.log" />
+		<param name="Threshold" value="INFO" />
+		<param name="Append" value="true" /> <!-- By default true -->
+		<param name="ImmediateFlush" value="true" /> <!-- By default true -->
+		<param name="DatePattern" value="'.'yyyy-MM-dd" /> <!-- By Default this format -->
+		<layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d] [%p] [%c:%L] %m%n" />
+        </layout>
+	</appender>
+
+	<root>	
+		<level value="INFO" />
+		<appender-ref ref="CA" />
+		<!-- <appender-ref ref="FA" /> -->
+		<appender-ref ref="DRFA" />
+	</root>
+
+	<!-- NOTE:
+		Levels of LOG
+      log.trace("Trace Message!");
+      log.debug("Debug Message!");
+      log.info("Info Message!");
+      log.warn("Warn Message!");
+      log.error("Error Message!");
+      log.fatal("Fatal Message!"); -->
+
+</log4j:configuration>
