@@ -78,7 +78,7 @@ public class ElasticSearchCrudImpl implements ElasticSearchCrud {
     public void getDocument() {
         try {
             client = ESclient.getInstant();
-            GetResponse response = client.prepareGet("school", "tytenthpe", "1")
+            GetResponse response = client.prepareGet("school", "tenth", "1")
                     .setOperationThreaded(false)
                     .get();
             if (response != null) {

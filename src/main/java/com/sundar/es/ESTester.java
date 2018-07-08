@@ -102,6 +102,21 @@ public class ESTester {
                         log.info("--------------------------------------");
                         esSearch.getDocumentUsingScroll();
                         break;
+                    case 10:
+                        log.info("Get Specific fields is started...");
+                        log.info("--------------------------------------");
+                        esSearch.getSpecificFields();
+                        break;
+                    case 11:
+                        log.info("Read Using Must Query is started...");
+                        log.info("--------------------------------------");
+                        esSearch.SearchByMustQuery();
+                        break;
+                    case 12:
+                        log.info("Read Using Should Query is started...");
+                        log.info("--------------------------------------");
+                        esSearch.SearchBySouldQuery();
+                        break;
                     default:
                         log.info("Invalid Argument : " + arg);
                         log.info("--------------------------------------");

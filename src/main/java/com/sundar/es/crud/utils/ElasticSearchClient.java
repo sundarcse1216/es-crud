@@ -47,15 +47,15 @@ public class ElasticSearchClient {
 
     private TransportClient getElasticClient() {
         try {
-            // un-command this, if you have multiple node
-//            TransportClient client1 = new PreBuiltTransportClient(Settings.EMPTY)
-//                    .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("host1"), 9300))
-//                    .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("host1"), 9300));
 
             Settings setting = Settings.builder()
                     .put("cluster.name", elasticPro.getProperty("cluster"))
                     .put("client.transport.sniff", Boolean.valueOf(elasticPro.getProperty("transport.sniff"))).build();
 
+            // un-command this, if you have multiple node
+//            TransportClient client1 = new PreBuiltTransportClient(setting)
+//                    .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("host1"), 9300))
+//                    .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("host1"), 9300));
             client = new PreBuiltTransportClient(setting)
                     .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(elasticPro.getProperty("host")), Integer.valueOf(elasticPro.getProperty("port"))));
         } catch (UnknownHostException ex) {

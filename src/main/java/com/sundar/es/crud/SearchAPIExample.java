@@ -16,5 +16,13 @@ public interface SearchAPIExample {
     public void getDocumentUsingScroll();
 
     public void searchAll();
+    
+    public void getSpecificFields();
+    
+    public void SearchByMustQuery();
+    
+    public void SearchBySouldQuery();
+    
+    public void SearchByAgregationQuery();
 
 }
